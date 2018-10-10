@@ -1,5 +1,5 @@
-from awx.main.models import Instance
+from django.conf import settings
 
 
 def get_local_queuename():
-    return Instance.objects.me().hostname.encode('utf-8')
+    return settings.CLUSTER_HOST_ID.encode('utf-8')
